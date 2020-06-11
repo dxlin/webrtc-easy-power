@@ -18,12 +18,8 @@ const WebSocketServer = WebSocket.Server;
 
 const WEBSOCKET_PORT = 9000;
 
-//const WEBSOCKET_ADDRESS = "localhost";				// all on same machine, this is also the "ws-server.js"
-const WEBSOCKET_ADDRESS = "127.0.0.1";				// all on same machine, this is also the "ws-server.js"
-//const WEBSOCKET_ADDRESS = "192.168.200.200";			// use 2 machines, IP of the "ws-server.js"
-
 // Create a server for handling websocket calls
-const myWebSock = new WebSocket.Server({ port: WEBSOCKET_PORT, host: WEBSOCKET_ADDRESS })
+const myWebSock = new WebSocket.Server({ port: WEBSOCKET_PORT })
 
 var currentWebSocket = 0;
 
@@ -75,7 +71,7 @@ myWebSock.sendToPeer = function(data, clientOrigemID) {
 
 
 console.log('--------------------------------------------');
-console.log('Server running. ws://' + WEBSOCKET_ADDRESS + ':' + WEBSOCKET_PORT );
+console.log('Server running on port: ' + WEBSOCKET_PORT );
 console.log('--------------------------------------------');
 console.log();
 
